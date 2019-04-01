@@ -1,0 +1,55 @@
+﻿		#nav {
+	position:relative;
+	width:1900px;
+	background-color:blue;
+	margin:auto;
+}
+ul .navs {
+
+	}
+	.f1 > li {
+	float:left;
+}
+.navs > li {
+	transition:1s;
+	margin:center;
+}
+.t2 li {
+	display:none;
+	transition:.5s;
+}
+.navs > li:hover {
+	
+}
+.navs >li:hover .t2 li {
+	display:block;
+	border-top:5px solid transition;
+}
+.t2 li:hover {
+	background:rgba(255,255,255,.5);
+	border-radius:12px;
+	opacity:1;
+	color: #000;
+}
+.navs,.f1 {
+	position: fixed;
+	width: 60%;
+	left:20%;
+	z-index:100;
+	right: 0;
+	height: 3rem;
+	background: rgba(158, 158, 158,.6);
+	border-radius: 10px;
+}
+.navs>li {
+	text-align: center;
+	float:left;
+	width: 13%;
+	margin-left: 2rem;
+	line-height: 3rem;
+}
+
+.t2 li{
+	height: 3rem;
+	line-height: 3rem;
+}

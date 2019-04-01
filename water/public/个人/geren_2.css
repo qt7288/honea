@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.backGround{
+
+}
+/*¹Ì¶¨±³¾°Í¼*/
+.background-img{
+    width: 100%;
+    position: fixed;
+}

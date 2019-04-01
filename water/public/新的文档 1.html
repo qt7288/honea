@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>测试welcome</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		body{overflow:hidden;width:1900px;height:1020px;background-color:black;}
+		#bj{text-align:center;background-color:transparent;width:1900px;height:1020px;position:relative;}
+		.si{position: relative;top:40px;opacity: .5;margin-right: 0;right: 360px;font-size:30px;font-family:幼圆;}
+		a{text-decoration:none;color:white;}
+
+				#time{
+					position:fixed;
+					width:600px;
+					height: 300px;
+					opacity: 1;
+					background-color:transparent;
+					top: 154px;
+					left: 120px;
+					
+			}
+			#dd,#aa,#cc{
+				position: relative;
+				font-family:snap itc,blackadder itc;
+				font-size:60px;
+				color:white;
+				float: left;
+				margin-left: 50px;
+			}
+			#body{
+				position:fixed;
+				background: url('img/xd.jpg') no-repeat center center;
+				margin: 0 auto;
+
+			}
+	</style>
+</head>
+<body onload="timer()">
+	<div id="body">
+	
+	
+	
+			<div id="bj" onclick="show()">
+				<a href="http://127.0.0.1:7777/index.html"><h1 class="si"></h1></a>
+											<!-- 时间函数 -->
+							<div id="time">
+								<div id="dd"></div>
+								<div id="aa"></div>
+								<div id="cc"></div>
+							</div>
+			</div>
+	</div>	
+
+</body>
+	<script>
+		function show(){
+			var bj=document.getElementById('bj');
+			var si=document.getElementsByClassName('si');
+				bj.style.background="transparent";
+				si[0].style.color="transparent";
+		}	
+		function timer(){
+		setInterval(
+		function(){
+		var dd=document.getElementById('dd');
+		var aa=document.getElementById('aa');
+		var cc=document.getElementById('cc');
+		var myDate = new Date();
+		/*小时*/
+		var myhour = (myDate.getHours() < 10) ? ("0" + myDate.getHours()) : myDate.getHours();
+		/*分钟*/
+		var mymin = (myDate.getMinutes() < 10) ? ("0" + myDate.getMinutes()) : myDate.getMinutes();
+		/*秒数*/
+		var mysec = (myDate.getSeconds() < 10) ? ("0" + myDate.getSeconds()) : myDate.getSeconds();
+
+		dd.innerHTML=myhour;
+		aa.innerHTML=mymin;
+		cc.innerHTML=mysec;
+			},100);
+		}
+	</script>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>像素块</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="boot.css/bootstrap.css"/>
+    <script src="boot.js/jquery.min.js"></script>
+    <script src="boot.js/popper.min.js"></script>
+    <script src="boot.js/bootstrap.min.js"></script>
+    <style>
+        #space-invader{
+            box-shadow:
+            0 0 0 1em black,
+            0 1em 0 1em black,
+            -2.5em 1.5em 0 .5em black,
+            2.5em 1.5em 0 .5em black,
+            -3em -3em 0 0 black,
+            3em -3em 0 0 black,
+            -2em -2em 0 0 black,
+            2em -2em 0 0 black,
+            -3em -1em 0 0 black,
+            -2em -1em 0 0 black,
+            2em -1em 0 0 black,
+            3em -1em 0 0 black,
+            -4em 0 0 0 black,
+            -3em 0 0 0 black,
+            3em 0 0 0 black,
+            4em 0 0 0 black,
+            -5em 1em 0 0 black,
+            -4em 1em 0 0 black,
+            4em 1em 0 0 black,
+            5em 1em 0 0 black,
+            -5em 2em 0 0 black,
+            5em 2em 0 0 black,
+            -5em 3em 0 0 black,
+            -3em 3em 0 0 black,
+            3em 3em 0 0 black,
+            5em 3em 0 0 black,
+            -2em 4em 0 0 black,
+            -1em 4em 0 0 black,
+            1em 4em 0 0 black,
+            2em 4em 0 0 black;
+            background: black;
+            width: 1em;
+            height: 1em;
+            overflow: hidden;
+            margin: 50px 0 70px 100px;
+            transform:rotate(0deg) ;
+        }
+        #a{
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <!-- 内部写-->
+    <div class="row bg-warning">
+        <div id="space-invader" class="bg-dark"></div>
+    </div>
+    <div id="a"></div>
+<script>
+    var a=document.getElementById("a");
+    a.innerHTML=`  #space-invader{
+            box-shadow:
+            0 0 0 1em black,
+            0 1em 0 1em black,
+            -2.5em 1.5em 0 .5em black,
+            2.5em 1.5em 0 .5em black,
+            -3em -3em 0 0 black,
+            3em -3em 0 0 black,
+            -2em -2em 0 0 black,
+            2em -2em 0 0 black,
+            -3em -1em 0 0 black,
+            -2em -1em 0 0 black,
+            2em -1em 0 0 black,
+            3em -1em 0 0 black,
+            -4em 0 0 0 black,
+            -3em 0 0 0 black,
+            3em 0 0 0 black,
+            4em 0 0 0 black,
+            -5em 1em 0 0 black,
+            -4em 1em 0 0 black,
+            4em 1em 0 0 black,
+            5em 1em 0 0 black,
+            -5em 2em 0 0 black,
+            5em 2em 0 0 black,
+            -5em 3em 0 0 black,
+            -3em 3em 0 0 black,
+            3em 3em 0 0 black,
+            5em 3em 0 0 black,
+            -2em 4em 0 0 black,
+            -1em 4em 0 0 black,
+            1em 4em 0 0 black,
+            2em 4em 0 0 black;
+            background: black;
+            width: 1em;
+            height: 1em;
+            overflow: hidden;
+            margin: 50px 0 70px 100px;
+            transform:rotate(0deg) ;
+        }`
+</script>
+</body>
+</html>

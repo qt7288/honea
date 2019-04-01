@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>03.htmlui主线程</h3>
+    <h3>03.htmluiworker线程</h3>
+    请输入乣计算的数据
+    <br>
+    <input type="number" id="num">
+    <br>
+    <button id="btn">开始计算累加和</button>
+    <br />
+    <div id="msg">计算结果</div>
+    <script>
+        // 获取元素num btn msg
+        var num=document.getElementById("num");
+        var btn=document.getElementById("btn");
+        var msg=document.getElementById("msg");
+        // 为btn元素绑定点击事件
+        btn.onclick=function(){ 
+        // 获取用户输入数值
+        var n=num.value; 
+        // 创建worker执行03.js
+        var w=new Worker("js/03.js");
+        // 发送数值发送03.js
+        w.postMessage(n);
+        w.onmessage=function(e){
+            msg.innerHTML=e.data;
+        }
+        // 显示值
+            
+    } 
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>svg</title>
+    <link rel="shortcut icon" href="img/wx/favicon.ico" />
+    <style>
+    </style>
+
+</head>
+<body>
+    <!-- <svg id="s3" width="500" height="400">
+        <ellipse cx="250" cy="250" rx="100" ry="25"></ellipse>
+        <g  stroke="black" stroke-linecap="round" stroke-width="10">
+                <line x1="50" y1="50" x2="100" y2="50" ></line>
+                <line x1="35" y1="50" x2="35" y2="50"></line>
+                <line x1="50" y1="70" x2="100" y2="70"></line>
+                <line x1="35" y1="70" x2="35" y2="70"></line>
+                <line x1="50" y1="90" x2="100" y2="90"></line>
+                <line x1="35" y1="90" x2="35" y2="90"></line>
+        </g>
+    </svg>
+
+    <svg id="sx" width="500" height="400"></svg>
+    <svg id="aa" width="500" height="400">
+            <polyline points="250,0 500,400 0,200 500,200 0,400 500,0 250,400 0,0 500,400 250,0 0,400 250,0 0,200 500,200 250,400 250,0 500,200 0,200 250,400" stroke="white" fill="transparent"></polyline>
+            <image xlink:href="img/01.jpg" X="0" y="0"></image>
+
+             <text font-size="29" x="250" y="200" stroke="red" fill="blue">TARENA</text>
+    </svg> -->
+    <!-- <svg id="bb" width="500" height="500"> -->
+<!--  -->
+    <!-- </svg>  -->
+        <div id="main" style="width:1000px;height:400px"></div> 
+        <div id="line" style="width:1000px;height:400px"></div> 
+</body>
+    <!-- <script>
+        var rows=[{name:"beijing",val:130},
+                    {name:"shanghai1",val:190},
+                    {name:"gauncgzhoiua",val:290}
+    ]
+        var sx=document.getElementById('sx');
+        for(var i=0;i<rows.length;i++){
+            var w=50;
+            var h= rows[i].val;
+            var y=400-h;
+            var x=i*100+50;
+            // 创建·举行并设置xywidthheight
+            var rect=document.createElementNS("http://www.w3.org/2000/svg","rect");
+            rect.setAttribute("width",w);
+            rect.setAttribute("height",h);
+            rect.setAttribute("x",x);
+            rect.setAttribute("y",y);
+            rect.setAttribute("fill","#000");
+            sx.appendChild(rect);
+        } -->
+
+
+    <!-- </script> -->
+    <script src="http://taotao2019.applinzi.com/js/echarts.min.js"></script>
+    <script>
+        // 获取容器
+        var main=document.getElementById('main');
+        var mychart =echarts.init(main);
+
+        // 一句容器创建echarts对象
+        // 创建配置项
+        var option={
+            title:{text:"echarts 第一个实例"
+                ,show :true,
+                subtext:"大学渣",
+                left:"center",
+                textStyle:{
+                    fontSize:40
+                }
+                
+            },
+            // 工具
+            toolbox:{
+                show:true,
+                feature:{
+                    dataView:{show:true},//数据视图
+                    restore:{show:true},//恢复
+                    dataZoom:{show:true},//区域缩放
+                    saveAsImage:{show:true}//下载图片
+                }
+            },
+            series:[{
+                // type:"pie",
+                // radius:"50%",
+                // center:["30%","60%"],
+                // data:[
+                    // {value:335,name:"直接访问"},
+                    // {value:335,name:"直接访问"},
+                    // {value:335,name:"直接访问"},
+                    // {value:335,name:"直接访问"},
+                    // {value:335,name:"直接访问"}
+                    name:"业务",
+                    type:"gayge",
+                    detail:""
+                
+            }]
+            // xAxis:{data:["衬衫","雪纺衫","马裤","袜子"]},
+            // yAxis:{},
+            // series:[
+            //     {type:"line",data:[5,3,10,30]},
+            //     {type:"bar",data:[5,3,10,30]}
+            // ]
+        }
+        // jiang配置添加echarts对象
+        mychart.setOption(option);
+</script>
+</html>

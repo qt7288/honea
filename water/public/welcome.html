@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>心率颤抖</title>
+	<style>
+		*{padding: 0;margin: 0;}
+		body{overflow:hidden;width:1900px;height:1020px;background-color:rgb(255, 255, 255);}
+		#bj{text-align:center;background-color:transparent;width:1900px;height:1020px;position:relative;}
+		.si{position: relative;top:40px;opacity: .5;margin-right: 0;right: 360px;font-size:30px;font-family:幼圆;}
+		a{text-decoration:none;color:white;}
+
+				#time{
+					position:fixed;
+					width:600px;
+					height: 300px;
+					opacity: 1;
+					background-color:transparent;
+					top: 154px;
+					left: 120px;
+			}
+			#dd,#aa,#cc{
+				position: relative;
+				font-family:blackadder itc,snap itc;
+				font-size:60px;
+				color:white;
+				float: left;
+				margin-left: 50px;
+			}
+			#body{
+				position:fixed;
+				background: url('img/xd.jpg') no-repeat center center;
+				margin: 0 auto;
+
+			}
+			#circle{
+				position:absolute;
+				width: 10px;
+				height: 10px;
+				border-radius:50%;
+				filter: blur(1px);/*为了模糊更明显，调高模糊度*/
+				/* background-color:#b2ebfe; */
+				background-color:white;
+				/* top:50px; */
+				z-index: 2;
+				top: 500px;
+				left:10px;
+				animation:myss 6s infinite;
+			/* 	transform:translate(850px,-100px); */
+			}
+@keyframes myss {
+				0%{transform:translate(600px,0px);opacity: .1;}
+				2%{transform:translate(733px,-2px);opacity: 1;}
+				5%{transform:translate(761px,-66px);}
+				7%{transform:translate(791px,47px);}
+				14%{transform:translate(812px,0px);}
+				21%{transform:translate(833px,45px);}
+				28%{transform:translate(853px,1px);}
+				35%{transform:translate(861px,47px);}
+				42%{transform:translate(870px,-230px);}
+				49%{transform:translate(900px,230px);}
+				56%{transform:translate(930px,20px);}
+				63%{transform:translate(945px,51px);}
+				70%{transform:translate(1115px,-150px);}
+				77%{transform:translate(1160px,75px);}
+				84%{transform:translate(1230px,0px);opacity: 1;}
+				91%{transform:translate(1588px,0px);}
+				100%{transform:translate(1784px,-101px);opacity:0;}
+			}
+	</style>
+</head>
+<body onload="timer()">
+	<div id="circle"></div>
+	<div id="body">
+			<div id="bj" onclick="show()">
+				<a href="http://127.0.0.1:7777/index.html"><h1 class="si">.</h1></a>
+											<!-- 时间函数 -->
+							<div id="time">
+								<div id="dd"></div>
+								<div id="aa"></div>
+								<div id="cc"></div>
+							</div>
+			</div>
+	</div>	
+
+</body>
+	<script>
+		function show(){
+			var bj=document.getElementById('bj');
+			var si=document.getElementsByClassName('si');
+				bj.style.background="transparent";
+				si[0].style.color="transparent";
+		}	
+		function timer(){
+		setInterval(
+		function(){
+		var dd=document.getElementById('dd');
+		var aa=document.getElementById('aa');
+		var cc=document.getElementById('cc');
+		var myDate = new Date();
+		/*小时*/
+		var myhour = (myDate.getHours() < 10) ? ("0" + myDate.getHours()) : myDate.getHours();
+		/*分钟*/
+		var mymin = (myDate.getMinutes() < 10) ? ("0" + myDate.getMinutes()) : myDate.getMinutes();
+		/*秒数*/
+		var mysec = (myDate.getSeconds() < 10) ? ("0" + myDate.getSeconds()) : myDate.getSeconds();
+
+		dd.innerHTML=myhour;
+		aa.innerHTML=mymin;
+		cc.innerHTML=mysec;
+			},100);
+		}
+	</script>
+</html>

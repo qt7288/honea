@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../myPro/js/jquery-1.11.3.js"></script>
+    <title>验证啊</title>
+    <style> 
+        #can{
+            border:1px solid green;
+        }
+        #aaaa{
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="can" width="200" height="100"></canvas>
+    <div id="aaaa"></div>
+</body>
+<script>
+    // 函数获取随机数
+    var can=document.getElementById('can');
+    var ctx=can.getContext("2d");
+    var aaaa=document.getElementById('aaaa');
+    // 随机数函数u
+    function math(min,max){
+        return parseInt(Math.random()*(max-min)+min);
+    }   
+    function maaa(){
+    var str="";
+    for(var i=0;i<5;i++){
+       
+        ctx.font="15px Arial";
+        ctx.fillStyle=`rgb(${math(0,256)},${math(0,256)},${math(0,256)})`;
+        var text=math(0,10);
+        ctx.fillText(text,math(10,20)+30*i,math(40,60));
+        str+=text;
+    }
+    aaaa.innerHTML=str;
+    // console.log(str);
+    for(var i=0;i<math(10,20);i++){
+        ctx.beginPath();
+        ctx.moveTo(math(0,200),math(0,100));
+        ctx.lineTo(math(0,200),math(0,100));
+        ctx.strokeStyle=`rgb(${math(0,256)},${math(0,256)},${math(0,256)})`;
+        ctx.stroke();
+    }
+}maaa();
+
+    $("#can").click(function(){
+        ctx.clearRect(0,0,200,100);
+        maaa();
+    })
+    $("#aaaa>h1").html();
+</script>
+
+</html>

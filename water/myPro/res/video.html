@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>video展示</title>
+</head>
+<body>
+	<h1>高级特性视频--事件</h1>
+	<div id="box">
+		<video src="x.mp4" id="v3"></video>
+	</div>
+
+</body>
+<script>
+	var box=document.getElementById("box");
+	var v3=document.getElementById("v3");
+	
+	
+	v3.addEventListener("timeupdata",function(){
+		console.log("当前时间点"+v3.currentTime)
+	})
+	v3.addEventLister("ended",function(){
+		console.log("播放结束");
+	})
+</script>
+</html>

@@ -1,0 +1,11 @@
+（1）创建表xz_login 用户登录表
+（2）创建服务端程序app_server_00/app.js
+（3）脚手架 Login.vue
+
+xz_Login
+id  int primary key auto_increment
+uname   varchar(25)
+upwd    varchar(32) 
+#mysql函数 32位
+--用户输入 
+--程序 加密 对比数据库 

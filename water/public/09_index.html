@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .pink{
+            background: pink;
+            color: rgb(175, 14, 41);
+        }
+        .dark{
+            background: #000;
+            color: #fff;
+        }
+        .light{
+            background: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <a href="10.html">跳转用户</a>
+    <select id="sel">
+        <option value="pink">请选择</option>
+        <option value="pink">芭比</option>
+        <option value="dark">黑铁</option>
+        <option value="light">白银</option>
+    </select>
+    <p>254154125412415</p>
+</body>
+<script>
+    // 获取下拉列表
+    var sel=document.getElementById('sel');
+    // 为下拉列表绑定事件
+    sel.onchange=function(){
+            // 获取当前下拉列表的val值
+        var v=this.value;
+            // 将value赋值body.CALSSname即可
+        document.body.className=v;
+            // 将影虎选中的value存储；localStorage
+            localStorage.setItem("style",v);
+
+    }
+    // 获取localStorage
+    // 如果数据存储在赋值body。className
+    var v=localStorage.getItem("style");
+
+</script>
+</html>

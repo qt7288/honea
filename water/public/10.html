@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+                .pink{
+            background: pink;
+            color: rgb(175, 14, 41);
+        }
+        .dark{
+            background: #000;
+            color: #fff;
+        }
+        .light{
+            background: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>用户中心</h1>
+
+    <script>
+        // 获取localStorage的值
+        // 判断是否存在
+        // 将值用body.className
+        var v=localStorage.getItem("style");
+        if(v){
+            document.bode.className=v;
+        }
+        // 试试监听
+        window.onstorage=function(){
+            console.log(123);
+            document.body.className=v;
+        }
+    </script>
+</body>
+</html>

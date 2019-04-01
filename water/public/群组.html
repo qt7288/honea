@@ -1,0 +1,729 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- >=992pc--><!-- <=991pad=>768--><!-- <=767phone..max767-->
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, user-scalable=0;" name="viewport" />
+	<title>Personal homepage</title>
+	<link rel="stylesheet" href="个人/person_body.css">
+	<link rel="stylesheet" href="boot.css/bootstrap.css" />
+	<script src="boot.js/jquery.min.js"></script>
+	<script src="boot.js/popper.min.js"></script>
+	<script src="boot.js/bootstrap.min.js"></script>
+	<style>
+		p,h1{
+			font-family:Arial, sans-serif;
+		}
+		.carousel-control-next-icon,.carousel-control-prev-icon{
+			/*background-color: rgba(0,0,0,0.5);*/
+			width:2vw;
+			height:30%;
+			border-radius:1.5vw;
+		}
+		.carousel-control-prev-icon{
+			position: absolute;
+			left: 1rem;
+		}
+		.leftQjt,.rightQjt{
+			position: absolute;
+
+			width: 20%;
+			height: 10%;
+			transform: rotate(90deg);
+		}
+		.leftQjt{
+			background-color: black;
+			top:-3rem;
+			left:4rem;
+		}
+		.rightQjt{
+			background-color: black;
+			top:-3rem;
+			left:-45rem;
+		}
+		.carousel-control-next-icon{
+			position: absolute;
+			right:1rem;
+		}
+		.my_size{
+			font-size:1rem;
+			/*font-style: italic;*/
+			font-weight:bold;
+			text-align: center;
+		 font-family:Helvetica, Arial, sans-serif;
+		}
+		.my_top{
+			top:-8rem;
+		}
+		.border-bottom {
+			border-bottom: 2rem solid #dee2e6 !important;
+		}
+		.my_ddc{
+			margin-top: 42rem;
+			left: -22rem;
+		}
+		h1.r_H{
+			margin-top: 40rem;
+			left:-5rem;
+			font-size:4rem;
+			z-index: 1000;
+			transition: 1s;
+		}
+		h1.r_H>span{
+			z-index: 10;
+			color: red;
+			transition: 2s;
+		}
+		h1.r_H:hover{
+			transform: translateX(-1rem);
+		}
+		h1.r_H:hover span{
+			background-color: transparent;
+			color:black;
+		}
+		h1.r_H:hover h1{
+			background-color: transparent;
+			color: red;
+		}
+		#body_body{
+			z-index: -1;
+		}
+		.name_66{
+			z-index:-2;
+			left:43rem;
+			background-color:white;
+			position: absolute;
+			width:54rem;
+			box-sizing: border-box;
+			margin-top:90rem;
+			padding: 1rem;
+/*1045/520*/
+		}
+		.modal-backdrop{
+			position: relative;
+		}
+		.btn:not(:disabled):not(.disabled) {
+			 /*cursor: pointer; */
+			cursor: url('img/指针/纯黑手绘鼠标指针/LinkSelect.cur'),auto;
+		}
+	</style>
+</head>
+<body onload="getrequest()">
+<!--&lt;!&ndash;onscroll="aaa()"&ndash;&gt;shubiao1-->
+<!--<head>-->
+<div id="header">
+	<!-- 下面是页头logo	 -->
+	<!--<div class="header_logo">-->
+	<!--<img src="img/LF.png" hieght="10px" alt="">-->
+	<!--</div>-->
+</div>
+<!--<div class=""></div>-->
+<!--小屏显示的-->
+<!--<div class="bg-dark navbar navbar-expand-md navbar-expand-lg navbar-expand-sm navbar-dark">-->
+	<!--<a href="#" class="navbar-brand"><h1>L&F Photo gallery</h1></a>-->
+	<!--<button class="navbar-toggler btn btn-dark" data-toggle="collapse" data-target="#menu" type="button">-->
+		<!--<span class="navbar-toggler-icon"></span>-->
+	<!--</button>-->
+	<!--<div id="menu" class="collapse navbar-collapse">-->
+		<!--<ul class="navbar-nav">-->
+			<!--<li class="nav-item"><a class="nav-link" href="#">我的‘朋友’</a></li>-->
+			<!--<li class="nav-item"><a class="nav-link" href="#">我的随堂笔记</a></li>-->
+			<!--<li class="nav-item"><a class="nav-link" href="#">我的规划</a></li>-->
+			<!--<li class="nav-item"><a class="nav-link" href="#">我的生#命</a></li>-->
+		<!--</ul>-->
+	<!--</div>-->
+<!--</div>-->
+<!--</head>-->
+<!-- 下面是头导航栏 -->
+<nav>
+<div id="nav" class="font-weight-bold col-lg-12">
+<ul>
+<li>R
+<ul class="xlm" type="none">
+<li><a class="toone" href="#body_header">H.eader</a></li>
+</ul>
+</li>
+<li>R
+<ul class="xlm" type="none">
+<li onclick="bodyParser()"><a class="totwo" href="#body_body">ThisBody</a></li>
+</ul>
+</li>
+<li>R
+<ul class="xlm" type="none">
+<li><a class="tothree" href="#div3">Gave you</a></li>
+</ul>
+</li>
+<li>R
+<ul class="xlm" type="none">
+<li><a class="tofour" id="rightQJT" href="#div4">showTime</a></li>
+</ul>
+</li>
+</ul>
+<div class="menu menu_qjt col-lg-7 text-center">
+	<p class="position-absolute text-light text-center w-100 my_size h-100 mt-lg-2">Time
+		<img src="img/qzone-vip.gif" class="my-qzone" alt=""/>
+		value
+	</p>
+</div>
+</div>
+
+</nav>
+<!--侧边LAN****************************************-->
+<div id="div4" class="div4_class">
+	<div class="card_header bg-dark text-light">
+		<h1 id="rightCe" class="text-center bg-danger font-weight-bold rounded p-0 m-0 mt-0 my-size-a">退出</h1>
+	</div>
+	<div class="p-0 text-center col-lg-12">
+		<button class="btn btn-lg btn-dark col-lg-12  border border-0 rounded-0 mb-2" data-target="#coll-c" data-toggle="collapse">个人信息</button>
+		<div class="collapse" id="coll-c">
+			<div class="card-body form-control bg-secondary text-light text-left mb-2 mt-0">
+				<p>❧Name:**涛</p>
+				<p>✪年龄:19岁</p>
+				<p>❉职业:在校学生、实习</p>
+				<p>❤座右铭 </p>
+				<p>❤	努力不一定进步，但放弃一定会失败</p>
+			</div>
+		</div>
+		<!-- button div 4 2-->
+		<button class="mb-2 btn btn-lg btn-dark col-lg-12 border border-0 rounded-0" data-target="#coll-cc" data-toggle="collapse">笔记</button>
+		<div class="collapse" id="coll-cc">
+			<div class="card-body form-control bg-secondary text-light text-left mb-2">
+				<a>2018.11</a>
+				<p>2018.12</p>
+				<p>2019.1</p>
+			</div>
+		</div>
+		<!-- div4 .3-->
+		<button class="btn btn-lg btn-dark col-lg-12 border border-0 rounded-0 mb-2" data-target="#coll-ccc" data-toggle="collapse">心得</button>
+		<div class="collapse" id="coll-ccc">
+			<div class="card-body form-control bg-secondary text-light text-left mb-2">
+				<p><a href="#">2019年1月24日17:48:24</a></p>
+				<p><a href="#">2019年1月24日17:48:33</a></p>
+				<p><a href="#">2019年1月24日17:48:41</a></p>
+				<p><a href="#">2019年1月24日17:48:50</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 下面是页面主体 -->
+<div id="body">
+	<div id="body_header" class="mt-lg-3 p-2">
+		<div id="page_cihui" class="text-center">
+			<img src="img/play_cb.png" style="width:100%" alt=""/>
+		</div>
+<!--分割此处原为大轮播暂时省略-->
+			<div class="photo_header">
+				<div class="text-center">
+					<p class="my_size_p">Qjt ' s Dazzling violet.Than anything.</p>
+					<p>&nbsp;</p>
+				</div>
+				<div class="text-center">
+					<p class="my_size my-life-hover">
+						<img id="biao" src="img/1.12.png" class="" style="width:100%" alt=""/>
+					</p>
+					<p class="my-life"><a href="http://127.0.0.1:7777/qjt_cc.html" target="_blank">❤</a></p>
+					<p class="my_size my-life-hover-cc my-cb">
+						<img src="img/play_cb.png" class="my-cb-1" alt=""/>
+					</p>
+					<p class="my_size my-life-hover-cc">
+						❤
+					</p>
+				</div>
+				<hr class="border"/>
+				<!-- 动态框-->
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<button id="create" class="btn btn-lg btn-light col-lg-4 text-truncate border border-dark" data-toggle="modal" data-target="#demo">
+								Create
+							</button>
+<!--2151-->
+						<div id="demo" class="modal"><!--负责响固定布局-->
+							<!-- 二-->
+							<div class="modal-dialog"><!--负责响应式布局-->
+								<!-- 三-->
+								<div class="modal-content"><!--负责弹性布局-->
+									<div class="modal-header"><p>你猜这是啥</p>
+										<button type="button" class="btn btn-sm col-3 close" data-dismiss="modal">&times;</button>
+									</div>
+									<!-- dadadada-->
+										<div class="modal-header">
+											<p class="w-100 my-font-size">
+
+												ﾟωﾟﾉ= /｀ｍ´）ﾉ ~┻━┻   //*´∇｀*/ ['_']; o=(ﾟｰﾟ)  =_=3; c=(ﾟΘﾟ) =(ﾟｰﾟ)-(ﾟｰﾟ); (ﾟДﾟ) =(ﾟΘﾟ)= (o^_^o)/ (o^_^o);(ﾟДﾟ)={ﾟΘﾟ: '_' ,ﾟωﾟﾉ : ((ﾟωﾟﾉ==3) +'_') [ﾟΘﾟ] ,ﾟｰﾟﾉ :(ﾟωﾟﾉ+ '_')[o^_^o -(ﾟΘﾟ)] ,ﾟДﾟﾉ:((ﾟｰﾟ==3) +'_')[ﾟｰﾟ] }; (ﾟДﾟ) [ﾟΘﾟ] =((ﾟωﾟﾉ==3) +'_') [c^_^o];(ﾟДﾟ) ['c'] = ((ﾟДﾟ)+'_') [ (ﾟｰﾟ)+(ﾟｰﾟ)-(ﾟΘﾟ) ];(ﾟДﾟ) ['o'] = ((ﾟДﾟ)+'_') [ﾟΘﾟ];(ﾟoﾟ)=(ﾟДﾟ) ['c']+(ﾟДﾟ) ['o']+(ﾟωﾟﾉ +'_')[ﾟΘﾟ]+ ((ﾟωﾟﾉ==3) +'_') [ﾟｰﾟ] + ((ﾟДﾟ) +'_') [(ﾟｰﾟ)+(ﾟｰﾟ)]+ ((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+((ﾟｰﾟ==3) +'_') [(ﾟｰﾟ) - (ﾟΘﾟ)]+(ﾟДﾟ) ['c']+((ﾟДﾟ)+'_') [(ﾟｰﾟ)+(ﾟｰﾟ)]+ (ﾟДﾟ) ['o']+((ﾟｰﾟ==3) +'_') [ﾟΘﾟ];(ﾟДﾟ) ['_'] =(o^_^o) [ﾟoﾟ] [ﾟoﾟ];(ﾟεﾟ)=((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+ (ﾟДﾟ) .ﾟДﾟﾉ+((ﾟДﾟ)+'_') [(ﾟｰﾟ) + (ﾟｰﾟ)]+((ﾟｰﾟ==3) +'_') [o^_^o -ﾟΘﾟ]+((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+ (ﾟωﾟﾉ +'_') [ﾟΘﾟ]; (ﾟｰﾟ)+=(ﾟΘﾟ); (ﾟДﾟ)[ﾟεﾟ]='\\'; (ﾟДﾟ).ﾟΘﾟﾉ=(ﾟДﾟ+ ﾟｰﾟ)[o^_^o -(ﾟΘﾟ)];(oﾟｰﾟo)=(ﾟωﾟﾉ +'_')[c^_^o];(ﾟДﾟ) [ﾟoﾟ]='\"';(ﾟДﾟ) ['_'] ( (ﾟДﾟ) ['_'] (ﾟεﾟ+(ﾟДﾟ)[ﾟoﾟ]+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (ﾟｰﾟ)+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟｰﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (ﾟｰﾟ)+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) +(o^_^o))+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) +(o^_^o))+ (ﾟｰﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) + (ﾟΘﾟ))+ (c^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟｰﾟ)+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (ﾟΘﾟ)+ (c^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (ﾟｰﾟ)+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟｰﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟｰﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ ((ﾟｰﾟ) + (o^_^o))+ (ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟｰﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟｰﾟ)+ (c^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (ﾟΘﾟ)+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (ﾟｰﾟ)+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) +(o^_^o))+ ((o^_^o) +(o^_^o))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (ﾟｰﾟ)+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) - (ﾟΘﾟ))+ (o^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ (ﾟｰﾟ)+ (o^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) +(o^_^o))+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) +(o^_^o))+ (c^_^o)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+ ((o^_^o) +(o^_^o))+ (ﾟｰﾟ)+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟｰﾟ)+ ((o^_^o) - (ﾟΘﾟ))+ (ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) + (ﾟΘﾟ))+ (ﾟΘﾟ)+ (ﾟДﾟ)[ﾟoﾟ]) (ﾟΘﾟ)) ('_');
+//
+											</p>
+										</div>
+
+									<div class="modal-header">
+										<button type="button" class="col-12 btn btn-lg btn-light" data-dismiss="modal">关闭</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 221-->
+							<p>&nbsp;</p>
+						</div>
+				</div>
+				</div>
+				<!-- tupian-->
+				<!--<div class="photo_myself my-right">-->
+					<!--<img src="img/17.jpg" class="" alt=""/>-->
+				<!--</div>-->
+
+			</div>
+		<!-- 下面是介绍 -->
+		<div class="body_header_speaker">
+			<!-- 下面是个人简介 -->
+			<div class="speaker_left">
+				<!--<p>name:qujiangtao</p>-->
+			</div>
+			<!-- 下面是个人简介2 -->
+			<div class="speaker_right">
+			</div>
+		</div>
+		<!--header bottom four six-->
+		<div class="body_header_body p-2 mr-1 bg-light">
+					<div class="photo" id="d1" onmousemove="show1()">
+						<!-- dianji效果再说-->
+						<img src="img/qjt_1789.jpg" alt=""/>
+
+						<div class="p1 font-weight-bold my-one" id="yi">
+							<p>壹</p>
+						</div>
+					</div>
+					<div  id="d2" class="" onmousemove="show2()">
+						<img src="img/timg3.jpg" alt=""/>
+						<div class="p1 font-weight-bold mt-two" id="er">
+							<p>贰</p>
+						</div>
+					</div>
+					<div id="d3" class="" onmousemove="show3()">
+						<img src="img/qjt_03.jpg" alt=""/>
+						<div class="p1 font-weight-bold my-three" id="san">
+							<p>叁</p>
+						</div>
+					</div>
+					<div id="d4" class="" onmousemove="show4()">
+						<img src="img/timg2.jpg" style="height: 100%" alt=""/>
+						<div class="p1 font-weight-bold mt-four" id="si">
+							<p>肆</p>
+						</div>
+					</div>
+		</div>
+	</div>
+</div>
+<!--</div>-->
+<div class="wass">
+	<!-- 首签文字效果-->
+	<div class="row">
+		<h1 class="name text-lg-right col-lg-6 offset-5"><span id="clickFour" class="text-danger">This</span> little world</h1>
+	</div>
+	<div class="row">
+		<div class="three_pa col-lg-1 offset-9"></div>
+	</div>
+	<!-- 小字体-->
+<div class="row">
+	<!-- 1-->
+	<div class="col-lg-6 offset-0 mt-lg-0 my_top p_small">
+		<!-- 卡片标签预******/////p300-->
+		<p class="text-lg-right col-lg-12 my_size position-absolute rounded">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid facere in, ipsum iure numquam voluptas voluptatibus? Autem deserunt
+		</p>
+	</div>
+</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="r_H position-absolute col-lg-12 offset-lg-2"><span class="">WE</span>ARE CREATIVE TEAM</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="four_pa col-lg-1 offset-8"></div>
+	</div>
+
+	<div class="row">
+		<div class="my_ddc col-lg-10 position-absolute p-0 offset-lg-7 my_size">
+				<p class="col-lg-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam commodi corporis culpa facilis molestiae optio provident sequi totam, voluptas! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dicta eum</p>
+		</div>
+	</div>
+	<!-- 小轮播展示p258***************************************************************************************-->
+		<div id="demo_555" class="name_66 carousel position-absolute" data-ride="carousel">
+			 <!--轮播图片 carousel-inner-->
+			<div class="body_header_img carousel-inner">
+				<!-- 每一张图片放在单独的carousel-item-->
+				<!-- 1-->
+				<div class="carousel-item active">
+					<h1 class="position-absolute text-center w-100 font-weight-bold">
+						这里是测试文字03，qjAI为您服务
+					</h1>
+					<img src="img/only.png" class=" w-100" alt=""/>
+				</div>
+				<!-- 2-->
+				<div class="carousel-item">
+					<h1 class="position-absolute text-center w-100 font-weight-bold text-dark">
+						这里是测试文字02，qjAI为您服务
+					</h1>
+					<img src="img/only.png" class=" w-100" alt=""/>
+				</div>
+				<!-- 3-->
+				<div class="carousel-item">
+					<h1 class="position-absolute text-center w-100 font-weight-bold">
+						这里是测试文字01，qjAI为您服务
+					</h1>
+					<img src="img/only.png" alt="" class=" w-100"/>
+				</div>
+				<!-- 4-->
+				<div class="carousel-item">
+					<h1 class="position-absolute text-center w-100 font-weight-bold">
+						这里是测试文字04，qjAI为您服务
+					</h1>
+					<img src="img/only.png" class=" w-100" alt=""/>
+				</div>
+				<!-- 95115564515645614-->
+			</div>
+			<ul class="carousel-indicators">
+				<!-- dainji活动到第0张图片-->
+				<!-- 点击后修改的是#demo这个轮播-->
+				<!-- data-silde-to-->
+
+				<!--li指向-->
+				<!--<li class="active" data-slide-to="0" data-target="#demo_555"></li>-->
+				<!--<li data-slide-to="1" data-target="#demo_555"></li>-->
+				<!--<li data-slide-to="2" data-target="#demo_555"></li>-->
+				<!--<li data-slide-to="3" data-target="#demo_555"></li>-->
+			</ul>
+			<a href="#demo_555" data-slide="prev" class="carousel-control-prev">
+				<span class="btn btn-lg bg-dark leftQjt carousel-control-prev-icon rounded-0"></span>
+			</a>
+			<a href="#demo_555" data-slide="next" class="carousel-control-next">
+				<span class="btn btn-lg rightQjt carousel-control-next-icon rounded-0"></span>
+			</a>
+		</div>
+		<!--/////////////////////////////////////////////////////////////////// -->
+
+</div>
+<div id="body_body">
+
+	<!-- 	下面是上5大块 -->
+	<div class="body_body_body p-2">
+		<div class="a" id="cdb">
+			<p class="p6">Coffee</p>
+			<img src="img/11.jpg" alt="" class="img1" id="imgOne"/>
+		</div>
+		<div class="b" id="two">
+			<p class="p7">Field</p>
+			<img src="img/15.jpg" alt="" class="img2">
+		</div>
+		<div class="c c1" id="three">
+			<!--3 -->
+			<p class="p8 pr-3">Sky </p>
+			<img src="img/14.jpg" alt="" class="img3"/>
+		</div>
+		<div class="d x" id="four">
+			<p class="p9">Lighthouse</p>
+			<img src="img/16.jpg" alt="" class="img4">
+		</div>
+		<div class="e tothree" id="">
+			<p class="p10">S.m.a.r.t</p>
+			<img src="img/timg1.jpg" alt="" class="img5">
+		</div>
+		<div class="g">
+			<!-- 左小∠-->
+			<div class="square_one text-danger text-left">
+				<!-- 插入小∠左侧-->
+				<div class="five_pa"></div>
+			</div>
+			<!-- 右小∠-->
+			<div class="square_two text-danger text-right">
+				<div class="six_pa"></div>
+			</div>
+		</div>
+		<!-- 	bottom*4+1大块 -->
+			<div id="div3" class="f dd"><img src="img/14.jpg" class="my-photo-one" alt=""></div>
+			<div class="f cc"><img src="img/15.jpg" class="my-photo-two" alt=""></div>
+			<div class="f bb"><img src="img/11.jpg" class="my-photo-three" alt=""></div>
+			<div class="f aa"><img src="img/17.jpg" class="my-photo-four" alt=""></div>
+
+
+<!--次数隐藏div5，华东十一板块-->
+</div>
+<!--</div>-->
+<!-- 	下面是换行div -->
+<div class="body_center">
+	<!-- cc -->
+	<div class="center_one c_one"></div>
+	<div class="center_one c_two"></div>
+</div>
+</div>
+<!-- 下面是页面尾部 -->
+		<div id="foot" class="rounded col-12">
+			<!-- 鼠标划入抬起尾部收揽栏 -->
+			<div class="Rise text-center col-lg-6 offset-3">******************************Tail column navigation************************************</div>
+			<p class="c1"></p>
+			<div class="row">
+				<div class="col-lg-6">
+					<em class="text-dark font-italic">联系我们：</em>
+					<input type="text" class="form-control"/>
+				</div>
+			</div>
+		</div>
+<!--</div>-->
+
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+<script>
+	/*下面的是：禁止屏幕缩放，固定屏幕大小*/
+	document.onmousewheel = function(evt) {
+		var e = evt || window.event;
+		if (e.preventDefault && e.ctrlKey) e.preventDefault();
+		if (e.ctrlKey) e.returnValue = false;
+	};
+	if (window.addEventListener) window.addEventListener('DOMMouseScroll', document.onmousewheel, false);
+
+	var c1 = document.getElementsByClassName('c1');
+	var c2 = document.getElementsByClassName('c2');
+
+	function getInfo(uidd) {
+		var xhr = new XMLHttpRequest();
+		console.log(0);
+		xhr.onreadystatechange = function() {
+			console.log(1);
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				var result = xhr.responseText;
+				var user = JSON.parse(result)[0];
+				console.log(user);
+				//显示数据
+				//			循环class.c1
+				//			当成功时，判断接收的uname账户名
+				//			"<img src='"+user["user_name"]+"'/>"图片链接
+				c1[0].innerHTML = user["uname"] + user["upwd"];
+				c1[1].innerHTML = user["phone"];
+			}
+		};
+		var url = "/myPro/query?uid=" + uidd;
+		xhr.open("get", url, true);
+		xhr.send();
+	}
+
+	function getrequest() {
+		var url = location.search;
+		if (url.indexOf("?") != -1) {
+			var str = url.substr(1);
+			var strs = str.split("=");
+		}
+		getInfo(strs[1]);
+	}
+	//	鼠标划入four photo 变换文字
+	//	var a="blue";
+	//	shengming颜色的变量
+	var page_cihui = document.getElementById('page_cihui');
+	page_cihui.style.fontSize=".8rem";
+	function show1() {
+		page_cihui.innerHTML = "将进酒·君不见黄河之水天上来 <br>[唐] 李白<br>君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。与君歌一曲，请君为我侧耳听。钟鼓馔玉不足贵，但愿长醉不复醒。古来圣贤皆寂寞，惟有饮者留其名。陈王昔时宴平乐，斗酒十千恣欢谑。主人何为言少钱，径须沽取对君酌。五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。";
+//		page_cihui.style.transform = "translateY(1rem)";
+		page_cihui.style.opacity = "1";
+		yi.innerHTML = "Text create";
+		page_cihui.style.border = ".5rem solid transparent";
+//		page_cihui.style.height = "30vw";
+	}
+
+	function show2() {
+		page_cihui.innerHTML = "Demo+java";
+//		page_cihui.style.transform = "translateY(1rem)";
+		page_cihui.style.opacity = "1";
+//		page_cihui.style.height = "14vw";
+		page_cihui.style.border = ".5rem solid transparent";
+		er.innerHTML = "Text create";
+	}
+
+	function show3() {
+		page_cihui.innerHTML = "c++、html";
+//		page_cihui.style.transform = "translateY(1rem)";
+		page_cihui.style.opacity = "1";
+//		page_cihui.style.height = "14vw";
+		page_cihui.style.border = ".5rem solid transparent";
+		san.innerHTML = "Text create";
+	}
+
+	function show4() {
+		page_cihui.innerHTML = "Mydream-a Superman";
+//		page_cihui.style.transform = "translateY(1rem)";
+		page_cihui.style.opacity = "1";
+//		page_cihui.style.height = "14vw";
+		page_cihui.style.border = ".5rem solid transparent";
+		si.innerHTML = "Text create";
+	}
+	document.onmouseout = function() {
+		page_cihui.innerHTML = "eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('5 k(){2.3=将进酒·君不见黄河之水天上来 <h>[唐] 李白<h>君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。与君歌一曲，请君为我侧耳听。钟鼓馔玉不足贵，但愿长醉不复醒。古来圣贤皆寂寞，惟有饮者留其名。陈王昔时宴平乐，斗酒十千恣欢谑。主人何为言少钱，径须沽取对君酌。五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。";
+		page_cihui.style.opacity = "1";
+		page_cihui.style.transform = "translateY(0)";
+		page_cihui.style.border = ".5rem solid transparent";
+		yi.innerHTML = "壹";
+		er.innerHTML = "贰";
+		san.innerHTML = "叁";
+		si.innerHTML = "肆";
+		si.style.color = "white";
+//		page_cihui.style.height = "0vw";
+	};
+	//	D定义
+	var body_body = document.getElementsByClassName('body_body');
+	var body_header_body = document.getElementsByClassName('body_header_body');
+	var cdb = document.getElementById('cdb');
+
+	//	平滑移动
+	/* chrome ie8下均正常 */
+	$(document).ready(function() {
+		$("a.toone").click(function() {
+			$("html, body").animate({
+				scrollTop: $($(this).attr("href")).offset().top + "px"
+			}, {
+				duration: 500,
+				easing: "swing"
+			});
+			return false;
+		});
+		$("a.totwo").click(function() {
+			$("html, body").animate({
+				scrollTop: $($(this).attr("href")).offset().top + "px"
+			}, {
+				duration: 500,
+				easing: "swing"
+			});
+			return false;
+		});
+		$("a.tothree").click(function() {
+			$("html, body").animate({
+				scrollTop: $($(this).attr("href")).offset().top + "px"
+			}, {
+				duration: 500,
+				easing: "swing"
+			});
+			return false;
+		});
+		$("a.tofour").click(function() {
+			$("html, body").animate({
+				scrollTop: $($(this).attr("href")).offset().top + "px"
+			}, {
+				duration: 500,
+				easing: "swing"
+			});
+			return false;
+		});
+	});
+	var clickFour = document.getElementById('clickFour');
+	var two = document.getElementById('two');
+	var three = document.getElementById('three');
+	var four = document.getElementById('four');
+	var imgOne = document.getElementById('imgOne');
+	clickFour.onmousemove = function() {
+		cdb.style.transform = "translate(-12rem,0)";
+		cdb.style.boxShadow = ".5rem .2rem 1rem black;";
+		two.style.transform = "translate(-2rem,0)";
+		two.style.borderLeft = ".5rem solid black";
+
+		three.style.transform = "translate(-24rem,0)";
+		four.style.transform = "translate(-14rem,0)";
+		four.style.borderLeft = ".5rem solid black";
+		document.onmouseout = function() {
+			cdb.style.transform = "translate(0,0)";
+			//			测试图片转换ok
+			//			imgOne.src="img/mou2.jpg";
+			two.style.transform = "translate(0,0)";
+			two.style.borderLeft = "0.5rem solid black";
+			three.style.transform = "translate(0,0)";
+			four.style.transform = "translate(0,0)";
+			four.style.borderLeft = "0.5rem solid black";
+		}
+	};
+	//centr show left tanslateX
+	var g = document.getElementsByClassName('g');
+	g.onclick = function() {
+		g.style.transform = "rotate(10deg)";
+	};
+	//	click four for 侧边
+	//	侧边点击max取消
+	var rightQJT = document.getElementById('rightQJT');
+	var div4 = document.getElementById('div4');
+	var rightCe = document.getElementById('rightCe');
+	rightQJT.onclick = function() {
+		div4.style.transform = "translateX(-30rem)";
+		div4.style.transform = "rotateY(360deg)";
+		rightCe.onclick = function() {
+			div4.style.transform = "translateX(30rem)";
+		};
+	};
+	var name = document.getElementsByClassName('name');
+	var three_pa = document.getElementsByClassName('three_pa');
+	three_pa[0].onclick = function() {
+		three_pa[0].style.opacity = ".8";
+		three_pa[0].style.transition = "2s";
+		three_pa[0].style.transform = "rotate(135deg) translate(30rem)";
+		three_pa[0].onclick = function() {
+			three_pa[0].onclick = null;
+		}
+	};
+	//测试成功
+	//var totwo=document.getElementsByClassName('totwo');
+	//two[0].onclick=function(){
+	//	body.style.transition="2s";
+	//	body.style.transform="rotateY(360deg)";
+	//}
+</script>
+</html>
+<!--xiayigerenwu-->
+<!--http://demo.cssmoban.com/cssthemes5/ccpt_22_bro/index.html-->
+<!--dalunbo暂放-->
+<!--
+		<!--<div id="demo" class="carousel" data-ride="carousel">-->
+<!--&lt;!&ndash; 轮播图片 carousel-inner&ndash;&gt;-->
+<!--<div class="body_header_img carousel-inner">-->
+<!--&lt;!&ndash; 每一张图片放在单独的carousel-item&ndash;&gt;-->
+<!--&lt;!&ndash; 1&ndash;&gt;-->
+<!--<div class="carousel-item active">-->
+<!--<h1 class="position-absolute text-center w-100 font-weight-bold">-->
+
+<!--</h1>-->
+<!--<img src="img/qjt_1.jpg" class=" w-100" alt=""/>-->
+<!--</div>-->
+<!--&lt;!&ndash; 2&ndash;&gt;-->
+<!--<div class="carousel-item">-->
+<!--<h1 class="position-absolute text-center w-100 font-weight-bold">-->
+
+<!--</h1>-->
+<!--<img src="img/qjt_2.jpg" class=" w-100" alt=""/>-->
+<!--</div>-->
+<!--&lt;!&ndash; 3&ndash;&gt;-->
+<!--<div class="carousel-item">-->
+<!--<h1 class="position-absolute text-center w-100 font-weight-bold">-->
+
+<!--</h1>-->
+<!--<img src="img/qjt_3.jpg" alt="" class=" w-100"/>-->
+<!--</div>-->
+<!--&lt;!&ndash; 4&ndash;&gt;-->
+<!--<div class="carousel-item">-->
+<!--<h1 class="position-absolute text-center w-100 font-weight-bold">-->
+
+<!--</h1>-->
+<!--<img src="img/qjt_4.jpg" class=" w-100" alt=""/>-->
+<!--</div>-->
+<!--</div>-->
+<!--<ul class="carousel-indicators">-->
+<!--&lt;!&ndash; dainji活动到第0张图片&ndash;&gt;-->
+<!--&lt;!&ndash; 点击后修改的是#demo这个轮播&ndash;&gt;-->
+<!--&lt;!&ndash; data-silde-to&ndash;&gt;-->
+<!--<li class="active" data-slide-to="0" data-target="#demo"></li>-->
+<!--<li data-slide-to="1" data-target="#demo"></li>-->
+<!--<li data-slide-to="2" data-target="#demo"></li>-->
+<!--<li data-slide-to="3" data-target="#demo"></li>-->
+<!--</ul>-->
+<!--<a href="#demo" data-slide="prev" class="carousel-control-prev">-->
+<!--<span class="carousel-control-prev-icon"></span>-->
+<!--</a>-->
+<!--<a href="#demo" data-slide="next" class="carousel-control-next">-->
+<!--<span class="carousel-control-next-icon"></span>-->
+<!--</a>-->
+<!--</div>-->
+
+<!--&ndash;&gt;-->

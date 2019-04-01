@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        canvas{
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div id="write"></div>
+    <canvas id="c3" width="1000" height="800"></canvas>
+
+</body>
+<script>
+    var c3=document.getElementById("c3");
+    var ctx=c3.getContext("2d")
+    // 创建图片下载
+    // var t = new Image();
+    // // 下载图片
+    // t.src="res/t.png"
+    // // 绑定时间onload下载成功
+    // t.onload = function(){
+    //      // 绘制图片
+    //      var x=t.width;
+    //      var y=t.height;
+    //      console.log("图片下载成功");
+    //     //  ctx.drawImage(t,250-x/2,200-y/2);
+    //     //  ctx.drawImage(p4,250-x/2,200-y/2);
+    //     //  ctx.drawImage(p3,250-x/2,200-y/2);
+    // }
+    // // 获得鼠标移动的位置
+    // // 画布绑定事件
+   
+    // c3.onmousemove=function(e){
+    //     ctx.clearRect(0,0,1000,800);
+    //     // ctx.clearRect(e.offsetX-125,e.offsetY-100,1000,800);
+    //     var x=t.width;
+    //     console.log(x);
+    //      var y=t.height;
+    //     ctx.drawImage(t,e.offsetX-x/2,e.offsetY-y/2);
+    //     // console.log(w);
+    //     console.log(e.offsetX+":"+e.offsetY);
+    //     write.innerHTML="x位移"+e.offsetX+":"+"y位移"+e.offsetY;
+    // }  
+        var t=new Image();
+        var p=new Image();
+        var d=new Image();
+        d.src="res/p5.png"
+        t.src="res/p3.png";
+        p.src="res/p4.png";
+            t.onload=function(){
+            var xDirection=1;
+            var a=1;
+            var b=1; 
+            var y=1;
+            var x=1;
+            var w=t.width;
+            var s=p.height;
+
+            var x1=d.width;
+            var y1=d.height;
+                setInterval(() => {
+                console.log("下载成功");
+                ctx.clearRect(x,0,1000,800);
+                x+=xDirection;
+                ctx.drawImage(t,x,0);
+                if(x>1000-w){
+                    xDirection=-1;
+                }
+                if(x<0){
+                    xDirection=1;
+                }  
+                ctx.clearRect(0,y,1000,800);
+                y+=xDirection;
+                ctx.drawImage(p,0,y);
+                if(y>800-s){
+                    xDirection=-1;
+                }
+                if(y<0){
+                    xDirection=1;
+                }  
+// 对缴费
+
+                ctx.clearRect(a,b,1000,800);
+                a+=xDirection;
+                b+=xDirection;
+                ctx.drawImage(d,a,b);
+                if(b>800-y1){
+                    xDirection=-1;
+                }
+                if(b<0){
+                    xDirection=1;
+                }  
+                if(a>1000-x1){
+                    xDirection=-1;
+                }
+                if(a<0){
+                    xDirection=1;
+                }
+
+
+                 },10);
+            }
+     
+    
+</script>
+</html>

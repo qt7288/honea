@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07_login</title>
+</head>
+<body>
+    <h1>07_loginhtml</h1>
+    <form action="">
+        用户名<input type="text" id="uname">
+        密码<input type="password" id="upwd">
+        <input type="button" value="登录" id="btn">
+    </form>
+    <script>
+        var uname=document.getElementById('uname');
+        var btn=document.getElementById('btn');
+        btn.onclick=function(){
+            var u=uname.value;
+            sessionStorage.setItem("uname",u);
+            alert("登陆成功3s后跳转主页");
+            console.log(u);
+            setTimeout(function(){
+                location.href="07.html";
+            },3000)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 命名一个mp函数
+        function mp(a) {
+            var i = a.length, j;
+            var b;//声明b
+            while (i > 0) {
+                for (j = 0; j < i - 1; j++) {
+                    if (a[j] > a[j + 1]) {
+                        b = a[j];
+                        a[j] = a[j + 1];
+                        a[j + 1] = b;
+                    }
+                }
+                i--;
+            }
+            return a;
+        }
+        // 声明一个a数组
+        var a = [3, 5, 4, 9, 1, 100, 7, 6, 1];
+        var b = mp(a);
+        console.log(b);
+    </script>
+</body>
+</html>

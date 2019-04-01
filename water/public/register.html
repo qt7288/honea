@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<title>longr_Register</title>
+<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<link rel="stylesheet" href="boot.css/bootstrap.css" />
+	<script src="boot.js/jquery.min.js"></script>
+	<script src="boot.js/popper.min.js"></script>
+	<script src="boot.js/bootstrap.min.js"></script>
+<style>
+	/* body{position:relative;} */
+			/*#cc{width:600px;height:359px;margin: auto;position:relative;*/
+				/*background-color: #fff;*/
+					/*/!* left:70%; *!/*/
+					/*top:200px;*/
+				/*}*/
+	span{
+		color:red;
+		font-size:10px;
+	}
+	</style>
+	</head>
+	<body>
+		<div class="container">
+		<div id="cc">
+				<h2 class="text-info">道自心生</h2>
+				<form method="post" action="/long_user/register">
+
+					用户：<input type="text" id="d1" name="uname" onfocus="show1()" onblur="show2()" class="form-control">
+						<span id="msg" class="text-danger h"></span>
+					<br/>
+					密码：<input type="password" id="d2" class="form-control" name="upwd" onfocus="show3()" onblur="show4()">
+						<span id="psg"></span>
+					<br>
+					邮箱：<input type="text" id="d3" name="email" class="form-control" onfocus="show5()" onblur="isEmail(this.value)">
+						<span id="esg"></span>
+					<br>
+					电话：<input type="text" id="d4" name="phone" class="form-control" onfocus="show7()" onblur="show8()">
+						<span id="csg"></span>
+					<br>
+					头像：<input type="file" name="avatar" class="form-control"><br>
+					<div class="form-inline">
+					性别：
+						<input type="radio" id="man" name="gender" value="1"><label for="man">男</label>
+						<input type="radio" id="woman" name="gender" value="0"><label for="woman">女</label>
+					</div>
+					<div class="col-12">
+						<input type="submit" class="btn btn-lg form-control bg-dark text-light">
+					</div>
+					<div class="col-12">
+						<a href="http://127.0.0.1:7777/个人主页.html"><button type="button" class="btn btn-lg btn-dark mt-2 col-lg-12 offset-0">游客登录
+						</button></a>
+					</div>
+				</form>
+		</div>
+		</div>
+<!--
+华丽的js分割线
+
+
+-->
+
+	<script>
+		//-------账号注册
+		function show1(){
+			msg.innerHTML="请输入6~12位之间的组合";
+		}
+		function show2(){
+			var text=d1.value;
+			if(text==""){
+				msg.innerHTML="帐号不能为空";
+			}else if(text.length>=6 && text.length<=12){
+				msg.innerHTML="√";
+			}else msg.innerHTML="输入违反规则,请重新输入";
+		}
+		//-------密码注册
+		function show3(){
+			psg.innerHTML="请输入6~12位之间的字符串组合";
+		}
+		function show4(){
+			var password=d2.value;
+			if(password==""){
+				psg.innerHTML="密码不能为空";
+
+			}else if(password-1){
+				psg.innerHTML="输入违反规则,请重新输入";
+			
+			}else if(password.length>=8 && password.length<=16){
+				psg.innerHTML="√";
+			}else{
+				psg.innerHTML="密码错误，请输入6-16位之间的字符串组合";
+			}
+		}
+		//-------邮箱
+		function show5(){
+			esg.innerHTML="格式包含@...";
+		}
+		function isEmail(strEmail) {
+			var flag = strEmail.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/);
+			var email=d3.value;
+			if(email==""){
+				esg.innerHTML="邮箱为空";
+			}
+			if (flag == -1){
+				esg.innerHTML="邮箱格式不正确";
+			}else{
+				esg.innerHTML="√";
+			}
+		}
+		//-------性别
+			if(man.checked){
+				gender="1";
+			}else{
+				gender="0";
+			}
+		function show7(){
+			csg.innerHTML="电话格式";
+		}
+		function show8(){
+			var phone=d4.value;
+			if(phone==""){
+				csg.innerHTML="电话为空";
+			}else if(phone.length!=11){
+				csg.innerHTML="输入格式错误";
+			}else{
+				csg.innerHTML="√";
+			}
+		}
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+[Version]
+signature="$CHICAGO$"
+
+[DefaultInstall]
+CopyFiles = Scheme.copy
+AddReg    = Scheme.Reg
+
+[DestinationDirs]
+Scheme.copy = 10,"%CUR_DIR%"
+
+[Scheme.Reg]
+HKCU,"Control Panel\Cursors\Schemes","%SCHEME_NAME%",,"%10%\%CUR_DIR%\%pointer%,%10%\%CUR_DIR%\%help%,%10%\%CUR_DIR%\%work%,%10%\%CUR_DIR%\%busy%,%10%\%CUR_DIR%\%Cross%,%10%\%CUR_DIR%\%Text%,%10%\%CUR_DIR%\%Hand%,%10%\%CUR_DIR%\%Unavailiable%,%10%\%CUR_DIR%\%Vert%,%10%\%CUR_DIR%\%Horz%,%10%\%CUR_DIR%\%Dgn1%,%10%\%CUR_DIR%\%Dgn2%,%10%\%CUR_DIR%\%move%,%10%\%CUR_DIR%\%alternate%,%10%\%CUR_DIR%\%link%"
+
+[Scheme.copy]
+"sc_ae_1.ani"
+"sc_ae_2.ani"
+"sc_ae_3.ani"
+"sc_ae_4.ani"
+"sc_ae_5.cur"
+"sc_ae_6.cur"
+"sc_ae_7.cur"
+"sc_ae_8.ani"
+"sc_ae_9.cur"
+"sc_ae_10.cur"
+"sc_ae_11.cur"
+"sc_ae_12.cur"
+"sc_ae_13.cur"
+"sc_ae_14.cur"
+"sc_ae_15.ani"
+"sc_ae_setup.inf"
+"sc_ae_spl.exe"
+"sc_ae_logo.bmp"
+[Strings]
+CUR_DIR         = "Cursors\A' ELEMENT"
+SCHEME_NAME     = "¦Á' element"
+Pointer		= "sc_ae_1.ani"
+Help		= "sc_ae_2.ani"
+Work		= "sc_ae_3.ani"
+Busy		= "sc_ae_4.ani"
+Cross		= "sc_ae_5.cur"
+Text		= "sc_ae_6.cur"
+Hand		= "sc_ae_7.cur"
+Unavailiable	= "sc_ae_8.ani"
+Vert		= "sc_ae_9.cur"
+Horz		= "sc_ae_10.cur"
+Dgn1		= "sc_ae_11.cur"
+Dgn2		= "sc_ae_12.cur"
+Move		= "sc_ae_13.cur"
+Alternate	= "sc_ae_14.cur"
+Link		= "sc_ae_15.ani"

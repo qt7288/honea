@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--判断数据库信息登录验证ajax判断-->
+<title>登录界面</title>
+	<!-- 植入boot模块css——and——js-->
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<link rel="stylesheet" href="boot.css/bootstrap.css" />
+	<script src="boot.js/jquery.min.js"></script>
+	<script src="boot.js/popper.min.js"></script>
+	<script src="boot.js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/01_logo.css">
+<meta charset="utf-8"/>
+</head>
+<body class="bg-light">
+	<div class="logo">
+		<!-- <img src="img/LF.png" alt=""/> -->
+	</div>
+	<div class="header text-center height-cc">
+		<!-- 添加图片-->
+		<!-- <img src="img/mou4.jpg" alt=""/> -->
+	</div>
+	<div class="container">
+		<div class="form-group">
+		<div class="form-inline">
+						<div class="text-dark text-right font-italic font-weight-bold col-lg-2 col-sm-12"><h2>用户名- <span>name</span>	</h2></div>
+						<div class="col-lg-12 col-sm-12 mt-2">
+							<input type="text" autocomplete="off" id="uname" class="focus text-center form-control w-100 text-lowercase" placeholder="">
+						</div>
+						<div class="col-lg-4 col-sm-12 text-center">
+							<p></p>
+						</div>
+					</div>
+		</div>
+		<!-- mima-->
+		<div class="form-inline m-1">
+					<div class="text-dark text-right font-italic font-weight-bold col-lg-2 col-sm-12 mt-2"><h2>密码- <span>passworld</span>	</h2></div>
+				<div class="col-lg-12 col-sm-12 mt-2">
+						<input type="password" id="upwd" class="form-control text-center w-100 text-lowercase" placeholder="">
+				</div>
+				<div class="col-lg-4 col-sm-12 text-danger text-right font-italic">
+					<div id="aa"></div>
+				</div>
+			</div>
+			<!-- <div class="form-inline">
+				<div class="col-lg-6 offset-lg-2 col-sm-12">
+					<input type="checkbox" class="form-check-inline"/><i>自动登录</i>
+				</div>
+			</div> -->
+		<div class="form-inline mt-3">
+				<input type="button" id="loginn" value="登录" onclick="login()" class="btn-dark col-lg-8 offset-lg-2 col-sm-12 login form-control btn-lg">
+		</div>
+		<div class="col-sm-6 col-lg-6 offset-lg-2 d-inline-block text-left text-dark mt-2">
+			<a href="http://172.242.3.181:7777/register.html" class="text-dark">立即注册</a>
+		</div>
+		</div>
+		<script>
+		function login(){
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=xhr.responseText;
+//					查询返回的值
+//					console.log(result);
+					var result = JSON.parse(result);
+//					dd.innerHTML=result;
+//					接收的信息
+//				检测登录用户密码帐号是否符合
+					console.log(result["uid"]);
+						if(result=="5"){aa.innerHTML="客官,您的帐号空的啦";}else
+						if(result=="6"){aa.innerHTML="客官,您密码没写";}else
+						if(result=="7"){aa.innerHTML="不对,请重新输入";}else
+						if(result){
+//						window.location.href="http://127.0.0.1:7777/个人主页.html?uid="+result[1];
+						// window.location.href="http://127.0.0.1:7777/个人主页.html?uid="+result["uid"];
+						window.location.href="http://172.242.3.181:7777";
+						aa.innerHTML="登录成功";
+						}
+			}
+//					传出登录的帐号匹配用户数据库信息
+//					匹配数据，插入数据库
+			};
+			var url="/myPro/login";
+			xhr.open("post",url,true);
+			xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			var formdata="uname="+uname.value+"&upwd="+upwd.value;
+			//console.log(formdata);
+			xhr.send(formdata);		
+		}
+	</script>
+</body>
+</html>

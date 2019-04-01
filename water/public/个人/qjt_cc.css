@@ -1,0 +1,128 @@
+/*个人主页*/
+/*基本样式*/
+html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    cursor:url('../img/指针/纯黑手绘鼠标指针/NormalSelect.cur'),default;
+}
+/*添加鼠标样式=花里胡哨*/
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+}
+.body{
+    height: 20rem;
+    border:1px solid black;
+}
+.bgc-1{
+    background-color:black;
+    opacity: .6;
+    color:white;
+}
+.my-border{
+    border-radius:.3rem;
+}
+.header{
+    width: 100%;
+    height: 5rem;
+    background-color: white;
+    position: fixed;
+    top:0;
+    z-index: 1000;
+}
+.my-first-ul>li{
+    height: 5rem;
+    line-height:4rem;
+    font-size: .8rem;
+    text-align: center;
+    background-color:#f6f6f6;
+    float: left;
+    /*position: fixed;*/
+    border-bottom:.1rem solid #71b5e8;
+    color:black;
+}
+/*测试*/
+/*.my-first-ul>li:hover{*/
+    /*background-color: black;*/
+    /*color: white;*/
+/*}*/
+.my-photo{
+    /*width: 100%;*/
+    height: 100%;
+    background-position:center bottom;
+    position:fixed;
+}
+.my_logo{
+    background-color: #f6f6f6;
+    border-bottom:.1rem solid #71b5e8;
+    font-weight: bold;
+    /*display: inline-block;*/
+    height:5rem;
+}
+.my_logo>img{
+    position: relative;
+    left:50%;
+    display: inline-block;
+    transition: 1s;
+    height: 5rem;
+    opacity: 0;
+}
+.my_logo>img:hover{
+    position: relative;
+    left:50%;
+    opacity: 1;
+    transform: translate(-2rem);
+}
+.my-headerRight{
+    height: 5rem;
+    background-color: #f6f6f6;
+    border-bottom:.1rem solid #71b5e8;
+    width: 100%;
+    margin: 0;
+}
+.my-foot{
+    width: 100%;
+    background-color: white;
+    opacity: .9;
+    height: 2.8rem;
+    margin-top: 23rem;
+    border-top:.1rem solid #71b5e8;
+}
+/*底部结尾*/
+.my-foot-size{
+    line-height: 2.7rem;
+}
+.my-body{
+    position: relative;
+    top:20rem;
+}
+.my-photo-meiTi{
+    width: 100px;
+    transition:1.6s;
+}
+.my-photo-meiTi:hover{
+    transform: scale(1.05);
+}
+.my-a{
+    text-decoration: none !important;
+    color:white;
+}
+.my-a:hover{
+    color:yellow;
+}
+.my-placeholder{
+    font-size: .5rem;
+}
+.my-aa{
+    color:black;
+    text-decoration: none;
+}
+.my-aa:hover{
+    color:yellow;
+}

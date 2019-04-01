@@ -1,0 +1,45 @@
+﻿
+		.rightt>img {
+	position:relative;
+}
+/* 		left展示徽章 */
+		/* .hzbj {
+	position:absolute;
+	top:510px;
+	left:50px;
+}
+.hzl {
+	position:absolute;
+	left:21px;
+	top:622px;
+}
+.hz {
+	position:absolute;
+	left:92px;
+	top:519px;
+}
+*/
+/* 666666 */
+			.rhzbj {
+	position:absolute;
+	top:44px;
+	left:31px;
+}
+.rhzl {
+	position:absolute;
+	top:-75px;
+	left:10px;
+	display:block;
+	opacity:0;
+	transition:1.5s;
+}
+.rhz {
+	margin:0 auto;
+	display:block;
+	position:absolute;
+	top:-270px;
+	/* left:75px;
+	*/
+			transition:1s;
+	z-index:1000;
+}

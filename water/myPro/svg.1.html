@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SVG</title>
+    <script src="js/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" width="900" height="600"></div>    
+</body>
+<script>
+        var main=document.getElementById('main');
+        var mychart =echarts.init(main);
+        var list=[
+            {name:"liu",val:213521},
+            {name:"liu",val:213521},
+            {name:"liu",val:213521},
+            {name:"liu",val:213521},
+            {name:"liu",val:213521},
+            {name:"liu",val:213521},
+            {name:"liu",val:213521},
+            {name:"liu",val:213521},
+            {name:"liu",val:213521}
+    
+    ]
+        var xrows=[];
+        var rows=[];
+        for(var item of list){
+            xrows.push(item.name);
+            rows.push(item.val);
+        }
+        // console.log(xrows+":"+rows);
+        var option={
+            title:{text:"销售统计图"},
+            xAxis:{data:xrows},
+            yAxis:{},
+            series:{type:"bar",data:rows}
+        };
+        mychart.setOption(option);
+</script>
+</html>
